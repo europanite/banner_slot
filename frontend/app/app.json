@@ -23,7 +23,7 @@
       "edgeToEdgeEnabled": true
     },
     "experiments": {
-      "baseUrl": "/banner_slot"
+      "baseUrl": "/banner-slot"
     },
     "web": {
       "favicon": "./assets/favicon.png",

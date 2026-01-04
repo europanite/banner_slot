@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Slot, type SlotBanner } from "../package/banner_slot";
+import { Slot, type SlotBanner } from "../package/banner-slot";
 
 const SIDEBAR_W = 240;
 const CONTENT_MAX_W = 760;
