@@ -20,7 +20,7 @@ export default function App() {
           <SettingsBar />
           <View style={{ flex: 1 }}>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Banner Slot" component={HomeScreen} />
             </Stack.Navigator>
           </View>
         </NavigationContainer>
