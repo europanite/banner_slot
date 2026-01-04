@@ -25,16 +25,40 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 20
-          cache: npm
-          cache-dependency-path: example/package-lock.json
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Install deps (package)
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Pack package
+        id: pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm pack --silent >/dev/null
+          TARBALL="$(ls -t *.tgz | head -n 1)"
+          echo "TARBALL=$TARBALL" >> "$GITHUB_OUTPUT"
+
+      - name: Inspect tarball contents
+        run: |
+          echo "TARBALL=${{ steps.pack.outputs.TARBALL }}"
+          tar -tf "${{ steps.pack.outputs.TARBALL }}" | sed -n '1,120p'
+          echo "---- dist files ----"
+          tar -tf "${{ steps.pack.outputs.TARBALL }}" | grep -E '^package/dist/index\.(mjs|js|d\.ts)$' || true
+
       - name: Install deps (example)
         working-directory: example
         run: npm ci
+
+      - name: Install local banner-slot into example
+        working-directory: example
+        run: npm install --no-save ../${{ steps.pack.outputs.TARBALL }}
 
       - name: Export (Expo Web)
         working-directory: example

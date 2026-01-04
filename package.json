@@ -3,14 +3,15 @@
   "version": "0.1.1",
   "license": "Apache-2.0",
   "sideEffects": false,
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "react-native": "dist/index.js",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup --config src/tsup.config.ts",
+    "prepack": "npm run build"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -28,9 +29,5 @@
     "react-native": "^0.83.1",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0"
-  },
-  "scripts": {
-    "build": "tsup src/banner-slot.tsx --format esm,cjs --dts --clean --tsconfig tsconfig.json",
-    "prepublishOnly": "npm run build"
   }
 }

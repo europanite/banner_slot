@@ -1,0 +1,8 @@
+example/
+.github/
+.vscode/
+coverage/
+reports/
+*.log
+*.tgz
+
