@@ -1,6 +1,6 @@
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
-import { Slot, SlotCard, type SlotBanner } from "banner-slot";
+import { TouchableOpacity,Linking, Text, View } from "react-native";
+import { Slot, type SlotBanner } from "banner-slot";
 
 const banners: SlotBanner[] = [
   {
@@ -72,13 +72,25 @@ export default function App() {
 
     const APP_BG = "#f6f4ff";
     const BORDER = "#000000";
+    const REPO_URL = "https://github.com/europanite/banner-slot";
 
 
   return (
     <View style={{ flex: 1, padding: 16, backgroundColor: "#f3f4f6" }}>
-      <Text style={{ fontSize: 20, fontWeight: "800", marginBottom: 12 }}>
-        banner-slot example
-      </Text>
+
+      <TouchableOpacity onPress={() => Linking.openURL(REPO_URL)}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: "800",
+            marginBottom: 12,
+            color: "#000000ff",
+            textDecorationLine: "underline",
+          }}
+        >
+          banner-slot example
+        </Text>
+      </TouchableOpacity>
 
       <View style={{ flex: 1 }}>
         <View
