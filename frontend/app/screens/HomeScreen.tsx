@@ -8,7 +8,7 @@ import {
   Linking 
 } from "react-native";
 
-const RAW_CONTACT_URL = "https://www.google.com/";
+const RAW_CONTACT_URL = "https://europanite.github.io/dummy_page/";
 const SIDEBAR_W = 240;
 const CONTENT_MAX_W = 760;
 
