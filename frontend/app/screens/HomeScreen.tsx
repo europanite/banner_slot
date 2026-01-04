@@ -14,6 +14,7 @@ const DEMO_BANNERS: SlotBanner[] = [
   {
     id: "slot-0",
     title: "Ocean view, zero effort",
+    body: "",
     cta: "Open demo",
     url: RAW_CONTACT_URL,
     imageUri: "https://picsum.photos/seed/goodday_ocean/900/650",
@@ -23,13 +24,53 @@ const DEMO_BANNERS: SlotBanner[] = [
   {
     id: "slot-1",
     title: "Coffee & quiet time",
+    body: "",
     cta: "See more",
     url: RAW_CONTACT_URL,
     imageUri: "https://picsum.photos/seed/goodday_coffee/900/650",
     sponsor: "GOODDAY",
     disclaimer: "Demo ad slot — not a real promotion.",
   },
-  // ...必要なだけ
+  {
+    id: "slot-2",
+    title: "Weekend micro trip",
+    body: "",
+    cta: "View route",
+    url: RAW_CONTACT_URL,
+    imageUri: "https://picsum.photos/seed/goodday_trip/900/650",
+    sponsor: "GOODDAY",
+    disclaimer: "Demo ad slot — not a real promotion.",
+  },
+  {
+    id: "slot-3",
+    title: "Sunset soundtrack",
+    body: "",
+    cta: "Play",
+    url: RAW_CONTACT_URL,
+    imageUri: "https://picsum.photos/seed/goodday_sunset/900/650",
+    sponsor: "GOODDAY",
+    disclaimer: "Demo ad slot — not a real promotion.",
+  },
+  {
+    id: "slot-4",
+    title: "Mountain air",
+    body: "",
+    cta: "Learn more",
+    url: RAW_CONTACT_URL,
+    imageUri: "https://picsum.photos/seed/goodday_mountain/900/650",
+    sponsor: "GOODDAY",
+    disclaimer: "Demo ad slot — not a real promotion.",
+  },
+  {
+    id: "slot-5",
+    title: "City lights",
+    body: "",
+    cta: "Open",
+    url: RAW_CONTACT_URL,
+    imageUri: "https://picsum.photos/seed/goodday_city/900/650",
+    sponsor: "GOODDAY",
+    disclaimer: "Demo ad slot — not a real promotion.",
+  },
 ];
 
 export default function HomeScreen() {
