@@ -77,7 +77,7 @@ export default function App() {
   return (
     <View style={{ flex: 1, padding: 16, backgroundColor: "#f3f4f6" }}>
       <Text style={{ fontSize: 20, fontWeight: "800", marginBottom: 12 }}>
-        banner-slot example (Expo Web → GitHub Pages)
+        banner-slot example
       </Text>
 
       <View style={{ flex: 1 }}>
@@ -92,28 +92,28 @@ export default function App() {
             }}
         >
             {/* Left sidebar: grows to consume extra space */}
-            <View style={{ flex: 1, minWidth: SIDEBAR_W, minHeight: 0 }}>
-            <Slot side="left" />
-            </View>
+          <View style={{ flex: 1, minWidth: SIDEBAR_W, minHeight: 0 }}>
+            <Slot side="left" banners={banners} />
+          </View>
 
             {/* Center: keep 760 as the “target” width, but allow shrinking */}
-            <View style={{ 
+          <View style={{ 
             borderWidth: 2,
             borderColor: BORDER,
             borderRadius: 12,
             width: CONTENT_MAX_W, 
             minWidth: 0, 
             padding: 12,
-            flexShrink: 1 }}>
+          flexShrink: 1 }}>
             <Text>
                 Main Content
             </Text>
-            </View>
+          </View>
 
-            {/* Right sidebar: grows to consume extra space */}
-            <View style={{ flex: 1, minWidth: SIDEBAR_W, minHeight: 0 }}>
-            <Slot side="right" />
-            </View>
+          {/* Right sidebar: grows to consume extra space */}
+          <View style={{ flex: 1, minWidth: SIDEBAR_W, minHeight: 0 }}>
+            <Slot side="right" banners={banners} />
+          </View>
         </View>
       </View>
     </View>
