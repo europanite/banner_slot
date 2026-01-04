@@ -10,8 +10,8 @@ import { StatusBar } from "expo-status-bar";
 
 const BAR_BG = "#000000ff";
 const CONTENT_MAX_W = 480;
-const REPO_URL      = "https://github.com/europanite/banner_slot";
-const REPO_URL_PAGE = "https://europanite.github.io/banner_slot/";
+const REPO_URL      = "https://github.com/europanite/banner-slot";
+const REPO_URL_PAGE = "https://europanite.github.io/banner-slot/";
 
 export default function SettingsBar() {
   const { width } = useWindowDimensions();

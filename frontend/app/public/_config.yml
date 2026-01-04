@@ -1,6 +1,6 @@
-title: "banner_slot"
+title: "banner-slot"
 description: "A Template For Frontend Expo Development."
-baseurl: "/banner_slot"
+baseurl: "/banner-slot"
 url: "https://europanite.github.io"
 theme: minima
 markdown: kramdown
