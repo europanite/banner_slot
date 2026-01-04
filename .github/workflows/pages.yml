@@ -25,17 +25,11 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 20
-          cache: npm
-          # ルートと example 両方をキャッシュ対象に（存在する前提）
-          cache-dependency-path: |
-            package-lock.json
-            example/package-lock.json
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      # --- ここから追加: banner-slot を CI 上で build → pack ---
       - name: Install deps (package)
         run: npm ci
 
@@ -45,17 +39,14 @@ jobs:
       - name: Pack package
         id: pack
         run: echo "TARBALL=$(npm pack --silent)" >> "$GITHUB_OUTPUT"
-      # --- 追加ここまで ---
 
       - name: Install deps (example)
         working-directory: example
         run: npm ci
 
-      # --- ここから追加: example に banner-slot を注入 ---
       - name: Install local banner-slot into example
         working-directory: example
         run: npm install --no-save ../${{ steps.pack.outputs.TARBALL }}
-      # --- 追加ここまで ---
 
       - name: Export (Expo Web)
         working-directory: example
