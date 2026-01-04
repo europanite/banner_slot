@@ -2,18 +2,18 @@
   "name": "banner-slot-example",
   "private": true,
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "expo/AppEntry",
   "scripts": {
     "dev:web": "expo start --web",
     "build:web": "expo export -p web"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~4.0.1",
-    "banner-slot": "^0.1.0",
     "expo": "^52.0.0",
+    "@expo/metro-runtime": "~4.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.76.3",
-    "react-native-web": "^0.19.13"
+    "react-native-web": "^0.19.13",
+    "banner-slot": "^0.1.0"
   }
 }
