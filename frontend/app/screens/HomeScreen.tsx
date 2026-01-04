@@ -192,7 +192,7 @@ function SlotCard({
     borderWidth: 2,
     borderColor: BORDER,
     borderRadius: 12,
-    overflow: "hidden",
+    overflow: "hidden" as const, // ✅ TS2769 fix: keep literal type
   };
 
   return (
@@ -310,9 +310,7 @@ function SlotCard({
   );
 }
 
-
 function Slot({ side }: { side: "left" | "right" }) {
-
   const banners = SLOT_BANNERS;
   if (!banners.length) return null;
 
@@ -323,10 +321,14 @@ function Slot({ side }: { side: "left" | "right" }) {
     return base % banners.length;
   }, [banners.length, side]);
 
-  return <SlotCard 
-    banners={banners} 
-    startIndex={startIndex} 
-    sticky variant="sidebar" />;
+  return (
+    <SlotCard 
+      banners={banners} 
+      startIndex={startIndex} 
+      sticky
+      variant="sidebar"
+    />
+  );
 }
 
 export default function HomeScreen() {
@@ -355,7 +357,8 @@ export default function HomeScreen() {
           width: CONTENT_MAX_W, 
           minWidth: 0, 
           padding: 12,
-          flexShrink: 1 }}>
+          flexShrink: 1 
+        }}>
           <Text>
             Main Content
           </Text>
