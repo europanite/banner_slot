@@ -1,0 +1,10 @@
+title: "banner_slot"
+description: "A Template For Frontend Expo Development."
+baseurl: "/banner_slot"
+url: "https://europanite.github.io"
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+highlighter: rouge
