@@ -13,9 +13,23 @@
 
 !["web_ui"](./assets/images/web_ui.png)
 
-[PlayGround](https://europanite.github.io/banner_slot/)
+**Playground:** https://europanite.github.io/banner_slot/
 
-A Client Side Expo Template.
+## OverView
+
+A small **banner slot** implementation
+
+This repo provides a clean, minimal, copy-friendly reference UI:
+- **sidebar-style slot**
+- **rotating banners (cross-fade)**
+- **clickable CTA that opens a URL**
+
+## Features
+
+- ✅ Expo + React Native Web friendly UI
+- ✅ Rotating banner with simple fade animation
+- ✅ Clickable CTA (`Linking.openURL`)
+- ✅ Works on GitHub Pages (exported web build)
 
 ---
 
