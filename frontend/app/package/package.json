@@ -1,0 +1,45 @@
+{
+  "name": "@europanite/banner-slot",
+  "version": "0.1.0",
+  "description": "A small banner slot UI for React Native / Expo (works on web via React Native Web).",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/europanite/banner-slot.git"
+  },
+  "homepage": "https://europanite.github.io/banner-slot/",
+  "keywords": ["react-native", "expo", "react-native-web", "banner", "ads", "ui"],
+  "sideEffects": false,
+
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "react-native": "./dist/index.js",
+
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+
+  "files": ["dist", "README.md", "LICENSE"],
+
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.72"
+  },
+
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0"
+  },
+
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup index.ts --format esm,cjs --dts --sourcemap --clean --external react,react-native",
+    "prepublishOnly": "npm run build"
+  }
+}
