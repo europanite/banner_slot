@@ -1,10 +1,6 @@
 # [Bannter Slot](https://github.com/europanite/banner-slot "Bannter Slot")
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
-[![CI](https://github.com/europanite/banner-slot/actions/workflows/ci.yml/badge.svg)](https://github.com/europanite/banner-slot/actions/workflows/ci.yml)
-[![docker](https://github.com/europanite/banner-slot/actions/workflows/docker.yml/badge.svg)](https://github.com/europanite/banner-slot/actions/workflows/docker.yml)
-[![GitHub Pages](https://github.com/europanite/banner-slot/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/europanite/banner-slot/actions/workflows/deploy-pages.yml)
 
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -13,51 +9,71 @@
 
 !["web_ui"](./assets/images/web_ui.png)
 
-**Playground:** https://europanite.github.io/banner-slot/
-
 ## OverView
 
-A small **banner slot** implementation
+A small rotating banner UI for **React Native / Expo / React Native Web**.
 
-This repo provides a clean, minimal, copy-friendly reference UI:
-- **sidebar-style slot**
-- **rotating banners (cross-fade)**
-- **clickable CTA that opens a URL**
+- ✅ **Sidebar-style** slot or **Inline** slot
+- ✅ **Rotating banners** (cross-fade)
+- ✅ **Clickable CTA** that opens a URL (default: `Linking.openURL`)
+- ✅ **Works on GitHub Pages** (exported web build)
 
-## Features
 
-- ✅ Expo + React Native Web friendly UI
-- ✅ Rotating banner with simple fade animation
-- ✅ Clickable CTA (`Linking.openURL`)
-- ✅ Works on GitHub Pages (exported web build)
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Prerequisites
-- [Docker Compose](https://docs.docker.com/compose/)
-
-### 2. Build and start all services:
+## Install
 
 ```bash
-# set environment variables:
-export REACT_NATIVE_PACKAGER_HOSTNAME=${YOUR_HOST}
-
-# Build the image
-docker compose build
-
-# Run the container
-docker compose up
-
+npm i banner-slot
+# or
+pnpm add banner-slot
+# or
+yarn add banner-slot
 ```
 
-### 3. Test:
+**Peer deps** (your app side):
+- `react`
+- `react-native` (Expo OK)
+- `react-native-web` (for Web)
+
+
+## Development
+
 ```bash
-docker compose \
--f docker-compose.test.yml up \
---build --exit-code-from \
-frontend_test
+npm install
+npm run build
+npm test
+```
+
+## Publishing
+
+1. Verify entrypoint + build output
+- build produces ESM/CJS + `.d.ts` in `dist/`
+
+2. Make sure your package contents are correct
+```bash
+npm pack
+# inspect the generated .tgz (it should include dist/*, README, LICENSE, etc.)
+```
+
+3. Login & publish
+```bash
+npm login
+npm publish
+```
+
+If you use a scoped name (e.g. `@your-scope/banner-slot`) and it should be public:
+```bash
+npm publish --access public
+```
+
+4. Tag a release (recommended)
+```bash
+git tag v0.1.0
+git push --tags
 ```
 
 ---
