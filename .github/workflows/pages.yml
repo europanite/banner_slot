@@ -38,7 +38,12 @@ jobs:
 
       - name: Pack package
         id: pack
-        run: echo "TARBALL=$(npm pack --silent)" >> "$GITHUB_OUTPUT"
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm pack --silent >/dev/null
+          TARBALL="$(ls -t *.tgz | head -n 1)"
+          echo "TARBALL=$TARBALL" >> "$GITHUB_OUTPUT"
 
       - name: Inspect tarball contents
         run: |
