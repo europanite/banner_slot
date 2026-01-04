@@ -40,6 +40,13 @@ jobs:
         id: pack
         run: echo "TARBALL=$(npm pack --silent)" >> "$GITHUB_OUTPUT"
 
+      - name: Inspect tarball contents
+        run: |
+          echo "TARBALL=${{ steps.pack.outputs.TARBALL }}"
+          tar -tf "${{ steps.pack.outputs.TARBALL }}" | sed -n '1,120p'
+          echo "---- dist files ----"
+          tar -tf "${{ steps.pack.outputs.TARBALL }}" | grep -E '^package/dist/index\.(mjs|js|d\.ts)$' || true
+
       - name: Install deps (example)
         working-directory: example
         run: npm ci
