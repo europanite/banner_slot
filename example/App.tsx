@@ -82,7 +82,7 @@ export default function App() {
       <TouchableOpacity onPress={() => Linking.openURL(REPO_URL)}>
         <Text
           style={{
-            fontSize: 24,
+            fontSize: 32,
             fontWeight: "800",
             marginBottom: 12,
             color: "#000000ff",
@@ -92,9 +92,24 @@ export default function App() {
           banner-slot example
         </Text>
       </TouchableOpacity>
-      <Text>This page is a sample for the npm package of "banner-slot"</Text>
+      <Text 
+        style={{
+          fontSize: 16,
+          fontWeight: "800",
+          marginBottom: 12,
+          color: "#333",
+        }}
+      >This page is a sample for the npm package of "banner-slot"</Text>
       <TouchableOpacity onPress={() => Linking.openURL(NPM_URL)}>
-        <Text >
+        <Text
+          style={{
+            fontSize: 16,
+            fontWeight: "800",
+            marginBottom: 12,
+            color: "#000fff",
+            textDecorationLine: "underline",
+          }}
+        >
           {NPM_URL}
         </Text>
       </TouchableOpacity>
