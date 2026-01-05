@@ -73,6 +73,7 @@ export default function App() {
     const APP_BG = "#f6f4ff";
     const BORDER = "#000000";
     const REPO_URL = "https://github.com/europanite/banner-slot";
+    const NPM_URL = "https://www.npmjs.com/package/banner-slot";
 
 
   return (
@@ -89,6 +90,12 @@ export default function App() {
           }}
         >
           banner-slot example
+        </Text>
+      </TouchableOpacity>
+      <Text>This page is a sample for the npm package of "banner-slot"</Text>
+      <TouchableOpacity onPress={() => Linking.openURL(NPM_URL)}>
+        <Text >
+          {NPM_URL}
         </Text>
       </TouchableOpacity>
 
